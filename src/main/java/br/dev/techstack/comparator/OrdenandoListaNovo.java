@@ -3,9 +3,11 @@ package br.dev.techstack.comparator;
 import br.dev.techstack.Usuario;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import static java.util.Comparator.comparing;
+import static java.util.Comparator.naturalOrder;
 
 public class OrdenandoListaNovo {
     public static void main(String[] args) {
@@ -21,5 +23,14 @@ public class OrdenandoListaNovo {
         Comparator<Usuario> comparator = Comparator.comparing(u -> u.getNome());
         usuarios.sort(comparator);
         usuarios.sort(comparing(u -> u.getNome()));
+
+        List<String> palavras = Arrays.asList("Luke Skywalker", "Han Solo", "Darth Vader");
+        Collections.sort(palavras);
+        palavras.sort(Comparator.naturalOrder());
+        palavras.sort(naturalOrder()); //Método por Import Static (Feature do JAVA 8)
+
+
+
+
     }
 }
